@@ -1,9 +1,12 @@
 #include <stdio.h>
 /**
-  * main -  Prints the size of various types on the computer it is compiled and run on.
+  * main -  Prints the size of various types.
   *
-  * Description: printf() prints a message with the size of each type and each sizeof() gets the value of the size of each type.
-  * Return: A message which each line have its own message telling which type is and its size value in byte(s).
+  * Description: printf() prints a message with the size of each type and each
+  * sizeof() gets the value of the size of each type on the computer it is
+  * compiled and run on.
+  * Return: A message which each line have its own message telling which type
+  * is and its size value in byte(s).
   */
 int main(void)
 {
