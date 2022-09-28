@@ -2,10 +2,13 @@
 #include <stdlib.h>
 #include <time.h>
 /**
-  * main - a
+  * main - Check the value of the last digit of n and prints a message
   *
-  * Description: a
-  * Return: a
+  * Description: Assigns n a random number each time it is executed and
+  * prints a message depending if the last digit of n values greater than 5,
+  * less than 6 or 0.
+  * Return: Prints a message with n, its last digit and if that digit is
+  * greater than 5, less than 6 or 0..
   */
 int main(void)
 {
