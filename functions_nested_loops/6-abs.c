@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 #include "_abs.c"
 /**
  * abs - Computes the absolute value of an integer
