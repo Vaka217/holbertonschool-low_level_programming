@@ -1,6 +1,10 @@
 #include "main.h"
 /**
+  * main - Prints '_putchar'.
   *
+  * Description: Prints each character in succesion to form the word '_putchar'
+  * and ends with a new line.
+  * Return: '_putchar\n'
   */
 int main(void)
 {
