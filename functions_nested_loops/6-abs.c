@@ -1,14 +1,15 @@
 #include "main.h"
+#include <stdio.h>
 #include "_abs.c"
 /**
- * abs - Computes the absolute value of an integer
+ * abs2 - Computes the absolute value of an integer
  *
  * Description: Computes the absolute value of an integer using _abs.
  * _abs checks if x number is negative or positive, if its positive prints x,
  * if not, prints -x.
  * Return: Always 0.
  */
-int abs(void)
+int abs2(void)
 {
 	int r;
 
