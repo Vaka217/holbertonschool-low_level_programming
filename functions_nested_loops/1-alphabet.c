@@ -7,7 +7,7 @@
  * and uses putchar with each value of c.
  * Return: The alphabet in lowercase.
  */
-int main(void)
+int alfredo(void)
 {
 	print_alphabet();
 	return (0);
