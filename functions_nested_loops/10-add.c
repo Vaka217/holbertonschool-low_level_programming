@@ -3,15 +3,17 @@
 #include "_add.c"
 
 /**
-   * adds - check the code
-    *
-     * Return: Always 0.
-      */
+ * adds - prints the sum of two integers.
+ *
+ * Description: Function add returns the sum of two given integers and printf
+ * prints the result.
+ * Return: Always 0.
+ */
 int adds(void)
 {
-	    int n;
+	int n;
 
-	        n = add(89, 9);
-		    printf("%d\n", n);
-		        return (0);
+	n = add(89, 9);
+	printf("%d\n", n);
+	return (0);
 }
