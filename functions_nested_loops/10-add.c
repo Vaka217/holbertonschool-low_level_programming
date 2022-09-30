@@ -3,11 +3,11 @@
 #include "_add.c"
 
 /**
-   * add - check the code
+   * adds - check the code
     *
      * Return: Always 0.
       */
-int add(void)
+int adds(void)
 {
 	    int n;
 
