@@ -10,6 +10,6 @@
  */
 int timetable(void)
 {
-	    times_table();
-	    return (0);
+	times_table();
+	return (0);
 }
