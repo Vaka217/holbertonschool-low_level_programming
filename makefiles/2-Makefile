@@ -1,9 +1,9 @@
 CC=gcc
-SRC=main.c
-OBJ=/*.o
+SRC=main.c school.c
+OBJ=$(SRC:%.c=%.o)
 NAME=school
+%.o: %.c
+	$(CC) $(CFLAGS) $< -c
+
 all:
-	$(CC) -c -o $(OBJ) $(SRC)
-	$(SRC)=school.c
-	$(CC) -c -o $(OBJ) $(SRC)
 	$(CC) $(OBJ) -o $(NAME)
