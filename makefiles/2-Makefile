@@ -7,3 +7,5 @@ all:
 	$(SRC)=school.c
 	$(OBJ)=school.o
 	$(CC) -c -o $(OBJ) $(SRC)
+	$(OBJ)=main.o school.o
+	$(CC) $(OBJ) -o $(NAME)
