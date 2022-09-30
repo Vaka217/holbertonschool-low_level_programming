@@ -1,6 +1,5 @@
-all: school
-
-school:	main.c
+all:	school
+school:
 	gcc main.c school.c -o school
 	julien@ubuntu:~/Makefiles$ ./school 
 	j#0000000000000000000000000000000000000
