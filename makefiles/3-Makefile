@@ -9,10 +9,10 @@ clean:
 	$(RM) '#*#'
 	$(RM) '~*~'
 oclean:
-	$(RM) '*.o'
+	$(RM) $(OBJ)
 fclean:
-	$(RM) '*.o'
-	$(RM) '*.c'
+	$(RM) $(OBJ)
+	$(RM) $(SRC)
 	$(RM) '#*#'
 	$(RM) '~*~'
 re:
