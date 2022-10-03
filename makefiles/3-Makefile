@@ -1,0 +1,20 @@
+C=gcc
+SRC=main.c school.c
+OBJ=$(SRC:%.c=%.o)
+NAME=school
+%.o: %.c m.h
+	$(CC) -c -o $@ $< 
+
+all: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+clean:
+	find ./ -name "#*#" | xargs rm;
+	find ./ -name '*~' | xargs rm;
+oclean:
+	find ./ -name '*.o' | xargs rm;
+fclean:
+	find ./ -name '*~' | xargs rm;
+	find ./ -name "#*#" | xargs rm;
+	find ./ -name "*.o" | xargs rm;
+re:
+	make clean;
