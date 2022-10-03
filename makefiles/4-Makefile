@@ -1,4 +1,4 @@
-C=gcc
+CC=gcc
 CFLAGS=
 SRC=main.c school.c
 OBJ=$(SRC:%.c=%.o)
