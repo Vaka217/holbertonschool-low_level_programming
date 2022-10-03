@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdio.h>
-#include "0-isupper.c"
 /**
  * main - Checks for uppercase letter
  *
