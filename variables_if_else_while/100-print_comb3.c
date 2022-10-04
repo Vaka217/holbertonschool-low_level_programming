@@ -11,13 +11,13 @@
 
 int main(void)
 {
-	int x, y, z = 0;
+	int x, y= 0;
 
 	for (x = 0; x <= 8; x++)
 	{
 		for (y = 1; y <= 9; y++)
 		{
-			if ((y >= z) && (y != x))
+			if (y > x)
 			{
 				putchar(x + '0');
 				putchar(y + '0');
@@ -28,7 +28,6 @@ int main(void)
 				}
 			}
 		}
-		z++;
 	}
 	putchar('\n');
 	return (0);
