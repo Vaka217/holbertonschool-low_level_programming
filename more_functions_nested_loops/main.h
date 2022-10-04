@@ -2,7 +2,6 @@
 #define main_h
 
 #include <stdio.h>
-#include "7-print_diagonal.c"
 int _putchar(char c);
 int _isupper(int c);
 int _isdigit(int c);

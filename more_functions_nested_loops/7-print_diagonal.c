@@ -1,29 +1,35 @@
 #include "main.h"
-#include "_putchar.c"
-
 /**
+  * print_diagonal - Prints a diagonal line with '\'
+  * @n: number of '\'
   *
+  * Description: Prints a diagonal line wit '\', with a number of spaces before
+  * each '\' starting from 0 to n-1. If n starts as 0 or less, returns a
+  * new line.
+  * Return: void
   */
 
 void print_diagonal(int n)
 {
-	int g = n;
-	if (n > 0)
+	int x, y;
+
+	x = 0;
+
+	while (n > 0)
 	{
-		while (n > 0)
+		y = x;
+		while (y > 0)
 		{
-			while (g - n > 0)
-			{
-				_putchar(32);
-				g--;
-			}
-			_putchar('\\');
-			n--;
-			_putchar('\n');
+			_putchar(32);
+			y--;
 		}
+		_putchar('\\');
+		n--;
+		x++;
+		_putchar('\n');
 	}
-	else
+	if (x < 1)
 	{
-	_putchar('\n');
+		_putchar('\n');
 	}
 }
