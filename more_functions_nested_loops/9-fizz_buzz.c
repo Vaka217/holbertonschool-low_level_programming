@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
-  * fizz_buzz - prints the numbers from 1 to 100, and words in some cases.
+  * main - prints the numbers from 1 to 100, and words in some cases.
   *
   * Description: Prints the numbers from 1 to 100, followed by a new line.
   * But for multiples of three print Fizz instead of the number and for the
@@ -10,7 +10,7 @@
   * Return: void.
   */
 
-void fizz_buzz(void)
+void main(void)
 {
 	int i;
 
