@@ -11,67 +11,38 @@
 
 void print_times_table(int n)
 {
-	int f, c = 0;
+	int f, c, p;
 
-	if ((n <= 15) && (n > 0))
+	if (n >= 0 && n <= 15)
 	{
-	for (f = 0; f < n + 1; f++)
-	{
-		for (c = 0; c < n; c++)
+		for (f = 0; f <= n; f++)
 		{
-			if ((f * c < 10) && (f * (c + 1) >= 10))
+			_putchar('0');
+
+			for (c = 1; c <= n; c++)
 			{
-				_putchar (f * c + '0');
-				_putchar (',');
-				_putchar (' ');
-				_putchar (' ');
+				_putchar(',');
+				_putchar(' ');
+
+				p = f * c;
+
+				if (p <= 99)
+					_putchar(' ');
+				if (p <= 9)
+					_putchar(' ');
+
+				if (p >= 100)
+				{
+					_putchar((p / 100) + '0');
+					_putchar(((p / 10)) % 10 + '0');
+				}
+				else if (p <= 99 && p >= 10)
+				{
+					_putchar((p / 10) + '0');
+				}
+				_putchar((p % 10) + '0');
 			}
-			else if (f * c >= 100)
-			{
-				_putchar (f * c / 100 + '0');
-				_putchar ((f * c / 10) % 10 + '0');
-				_putchar (f * c % 10 + '0');
-				_putchar (',');
-				_putchar (' ');
-			}
-			else if ((f * c >= 10) && (f * (c + 1) >= 100))
-			{
-				_putchar (f * c / 10 + '0');
-				_putchar (f * c % 10 + '0');
-				_putchar (',');
-				_putchar (' ');
-			}
-			else if (f * c >= 10)
-			{
-				_putchar (f * c / 10 + '0');
-				_putchar (f * c % 10 + '0');
-				_putchar (',');
-				_putchar (' ');
-				_putchar (' ');
-			}
-			else
-			{
-			_putchar (f * c + '0');
-			_putchar (',');
-			_putchar (' ');
-			_putchar (' ');
-			_putchar (' ');
-			}
+			_putchar('\n');
 		}
-		if (f * c < 10)
-			_putchar (f * c + '0');
-		else if (f * c >= 100)
-		{
-			_putchar (f * c / 100 + '0');
-			_putchar (f * c / 10 % 10 + '0');
-			_putchar (f * c % 10 + '0');
-		}
-		else
-		{
-			_putchar ((f * c) / 10 + '0');
-			_putchar ((f * c) % 10 + '0');
-		}
-		_putchar ('\n');
-	}
 	}
 }
