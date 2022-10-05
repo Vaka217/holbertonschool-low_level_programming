@@ -10,18 +10,18 @@
 
 int main(void)
 {
-	int i, t1 = 0;
-	int t2 = 1;
-	int nextt = t1 + t2;
+	long int i, t1 = 0;
+	long int t2 = 1;
+	long int nextt = t1 + t2;
 
 	for (i = 1; i <= 49; i++)
 	{
-		printf("%d, ", nextt);
+		printf("%ld, ", nextt);
 		t1 = t2;
 		t2 = nextt;
 		nextt = t1 + t2;
 	}
-	printf("%d\n", nextt);
+	printf("%ld\n", nextt);
 	return (0);
 }
 
