@@ -9,7 +9,8 @@
 
 int main(void)
 {
-	long int i, t1, p1, p2 = 0;
+	long int i, t1 = 0;
+	long int p1, p2 = 0;
 	long int t2 = 1;
 	long int nextt = t1 + t2;
 
