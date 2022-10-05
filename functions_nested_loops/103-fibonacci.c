@@ -10,7 +10,7 @@
 
 int main(void)
 {
-	long int t1 = 0
+	long int t1 = 0;
 	long int sum = 0;
 	long int t2 = 1;
 	long int nextt = t1 + t2;
