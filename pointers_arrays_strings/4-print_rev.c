@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
-  * _puts - prints a string in reverse.
+  * print_rev - prints a string in reverse.
   * @s: string parameter.
   *
   * Description: Prints a string in reverse followd by a new line to stdout.
   * Return: void.
   */
 
-vid print_rev(char *s)
+void print_rev(char *s)
 {
 	int i = 0;
 
