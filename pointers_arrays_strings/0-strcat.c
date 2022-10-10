@@ -1,7 +1,14 @@
 #include "main.h"
 
 /**
+  * _strcat - concatenates two strings.
+  * @dest: Destination string.
+  * @src: String to add to end of dest.
   *
+  * Description: Concatenates two strings. Appends the src string to the dest
+  * string, overwriting the terminating null byte (\0) at the end of dest, and
+  * then adds a terminating null byte.
+  * Return: char pointer to dest.
   */
 
 char *_strcat(char *dest, char *src)
