@@ -12,29 +12,12 @@
 
 int _strcmp(char *s1, char *s2)
 {
-	int count1 = 0;
-	int count2 = 0;
-	int resneg = -10;
-	int respos = 10;
-	int small = 0;
-
-	while (*s1++)
-		count1++;
-	while (*s2++)
-		count2++;
-	small = (count1 < count2) ? count1 : count2;
-	resneg += -(small);
-	respos += small;
-	if (count1 < count2)
-		return (resneg);
-	else if (count1 > count2)
-		return (respos);
 	while (*s1)
 	{
 		if (*s1 < *s2)
-			return (resneg);
+			return (*s1 - *s2);
 		if (*s1 > *s2)
-			return (respos);
+			return (*s1 - *s2);
 		s1++;
 		s2++;
 	}
