@@ -29,6 +29,14 @@ int _strcmp(char *s1, char *s2)
 		return (resneg);
 	else if (count1 > count2)
 		return (respos);
-	else
-		return (0);
+	while (*s1)
+	{
+		if (*s1 < *s2)
+			return (resneg);
+		if (*s1 > *s2)
+			return (respos);
+		s1++;
+		s2++;
+	}
+	return (0);
 }
