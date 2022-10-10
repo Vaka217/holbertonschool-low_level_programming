@@ -16,7 +16,7 @@ int _strcmp(char *s1, char *s2)
 	int count2 = 0;
 	int resneg = -10;
 	int respos = 10;
-	int small;
+	int small = 0;
 
 	while (*s1++)
 		count1++;
