@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
-  * *_memset - fills memory with a constant byte.
-  * @s: Pointer to array.
-  * @b: Constant byte.
-  * @n: First n bytes.
+  * *_memcpy - copies memory area.
+  * @dest: Pointer to array where paste bytes.
+  * @src: Pointer to array where copy bytes.
+  * @n: First n bytes of src.
   *
-  * Description: fills the first n bytes of the memory area pointed to by s
-  * with the constant byte c.
-  * Return: A pointer to the memory area s.
+  * Description: copies the first n bytes of the memory area src to memory
+  * area dest.
+  * Return: A pointer to dest.
   */
 
 char *_memcpy(char *dest, char *src, unsigned int n)
