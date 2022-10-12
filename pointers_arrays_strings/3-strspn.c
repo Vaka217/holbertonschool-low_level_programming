@@ -14,15 +14,15 @@ unsigned int _strspn(char *s, char *accept)
 {
 	unsigned int count = 0, i = 0, lens = 0, lenaccept = 0;
 
-	while (*s++)
-		lens++;
 	while (*accept++)
 		lenaccept++;
+	while (*s++)
+		lens++;
 	for (i = 0; i < lens; i++)
 	{
 		if (count == lenaccept)
-			return (count + 1);
-		if (s[i] == accept[count])
+			break;
+		if (s[i] == accept [count])
 			count++;
 	}
 	return (count);
