@@ -12,7 +12,7 @@
 
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int count = 0, i = 0, lens = 0, lenaccept = 0;
+	unsigned int count = 0, i = 0, j = 0, lens = 0, lenaccept = 0;
 
 	while (*accept++)
 		lenaccept++;
@@ -22,8 +22,11 @@ unsigned int _strspn(char *s, char *accept)
 	{
 		if (count == lenaccept)
 			break;
-		if (s[i] == accept [count])
+		for (j = 0; j < lenaccept; j++)
+		{
+		if (s[i] == accept [j])
 			count++;
+		}
 	}
 	return (count);
 }
