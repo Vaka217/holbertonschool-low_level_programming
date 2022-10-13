@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
-  * *_strpbrk - searches a string for any of a set of bytes.
-  * @s: String parameter.
-  * @accept: String for set of bytes.
+  * *_strstr - searches a string for any of a set of bytes.
+  * @haystack: String parameter.
+  * @needle: String for set of bytes.
   *
   * Description: Locates the first occurrence in the string s of any of the
   * bytes in the string accept.
