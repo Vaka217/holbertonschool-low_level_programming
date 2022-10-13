@@ -13,18 +13,28 @@
 
 char *_strstr(char *haystack, char *needle)
 {
-	int i = 0;
+	char *haycp, *needcp;
 
-	while (*(haystack + i))
-	{
-		if (*(haystack + i) == *needle)
-			if (*(haystack + (i + 1)) == *(needle + 1))
-				if (*(haystack + (i + 2)) == *(needle + 2))
-					return (haystack + i);
-		i++;
-	}
-	if (*(needle + 0) == 0)
+	if (!*needle)
 		return (haystack);
-	else
-		return (NULL);
+	while (*haystack)
+	{
+		if (*haystack == *needle)
+		{
+			haycp = haystack;
+			needcp = needle;
+			while (*needcp)
+			{
+				if (*haycp++ != *needcp++)
+				{
+					haystack = haycp;
+					break;
+				}
+			}
+			if (haycp != haystack)
+				return (haycp);
+		}
+		haystack++;
+	}
+	return (0);
 }
