@@ -10,7 +10,7 @@
 
 int main(__attribute__ ((unused)) int argc, char **argv)
 {
-	if (argv[1] != NULL)
+	if (argv[2] != NULL)
 		printf("%d\n", atoi(argv[1]) * atoi(argv[2]));
 	else
 		printf("Error\n");
