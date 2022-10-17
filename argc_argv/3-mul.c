@@ -5,12 +5,12 @@
   * @argc: Count number of arguments.
   * @argv: Array of strings (arguments).
   *
-  * Return: 0.
+  * Return: 1.
   */
 
 int main(__attribute__ ((unused)) int argc, char **argv)
 {
-	if (argv[2] != NULL)
+	if (argv[2] != NULL || argv[1] != NULL)
 		printf("%d\n", atoi(argv[1]) * atoi(argv[2]));
 	else
 		printf("Error\n");
