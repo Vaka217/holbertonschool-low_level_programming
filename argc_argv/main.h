@@ -2,5 +2,5 @@
 #define main_h
 
 #include <stdio.h>
-void whatsmyname(int argc, char **argv);
+int main(int argc, char **argv);
 #endif
