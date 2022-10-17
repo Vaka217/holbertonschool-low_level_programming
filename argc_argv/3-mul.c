@@ -10,9 +10,15 @@
 
 int main(__attribute__ ((unused)) int argc, char **argv)
 {
-	if (argv[2] != NULL || argv[1] != NULL)
-		printf("%d\n", atoi(argv[1]) * atoi(argv[2]));
-	else
+	int i = 0, j = 1;
+
+	if (argc == 1 || argc == 2)
+	{
 		printf("Error\n");
-	return (1);
+		return (1);
+	}
+	for (i = 1; i < 3; i++)
+		j *= atoi(argv[i]);
+	printf("%d\n", j);
+	return (0);
 }
