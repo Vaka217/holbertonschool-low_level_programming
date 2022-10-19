@@ -12,8 +12,6 @@ char *str_concat(char *s1, char *s2)
 	size_t i, j, w = 0;
 
 	s3 = malloc(strlen(s1) + strlen(s2));
-	printf("%ld\n", strlen(s1));
-	printf("%ld\n", strlen(s2));
 	if (s3 == NULL)
 		return (NULL);
 	for (i = 0; i < strlen(s1) - 1; i++)
