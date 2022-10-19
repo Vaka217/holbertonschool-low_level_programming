@@ -9,9 +9,9 @@
 char *_strdup(char *str)
 {
 	char *dup = NULL;
-	long unsigned int i = 0;
+	unsigned long int i = 0;
 
-	if (str != NULL)
+	if (str != NULL && strlen(str) != 0)
 	{
 		dup = malloc(sizeof(char) * strlen(str) + 1);
 		for (i = 0; i <= strlen(str); i++)
