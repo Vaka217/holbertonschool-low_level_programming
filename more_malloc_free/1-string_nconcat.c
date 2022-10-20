@@ -2,7 +2,14 @@
 #include <stdlib.h>
 
 /**
+  * string_nconcat - concatenates two strings.
+  * @s1: First string.
+  * @s2: String after the first string.
+  * @n: Number of bytes of s2 that goes after s1.
   *
+  * Return: a pointer to allocate space in memory which contains s1, followed
+  * by the first n bytes of 2, and null terminated. If the function fails,
+  * returns NULL.
   */
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
@@ -22,8 +29,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 	if (len2 > n)
 		len2 = n;
-	else
-		n = len2;
 	s3 = malloc((len + len2 + 1) * sizeof(char));
 	if (s3 == NULL)
 		return (NULL);
