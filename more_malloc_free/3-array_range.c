@@ -2,7 +2,12 @@
 #include <stdlib.h>
 
 /**
+ * array_range - creates an array of strings
+ * @min: First element of the array.
+ * @max: Last element and size of the array.
  *
+ * Return: A pointer to the created array or NULL if min is greater than max or
+ * if malloc fails.
  */
 
 int *array_range(int min, int max)
