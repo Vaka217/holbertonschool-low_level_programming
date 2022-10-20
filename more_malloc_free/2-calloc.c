@@ -2,7 +2,12 @@
 #include <stdlib.h>
 
 /**
+  * calloc - allocates memory for an array, using malloc.
+  * @nmemb: Number of elements of the array.
+  * @size: Number of bytes of each element.
   *
+  * Return: A pointer to the allocated memory or NULL if nmemb or size is 0 or
+  * if malloc fails.
   */
 
 void *_calloc(unsigned int nmemb, unsigned int size)
