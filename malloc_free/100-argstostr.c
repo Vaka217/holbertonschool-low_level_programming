@@ -19,7 +19,6 @@ char *argstostr(int ac, char **av)
 	if (ac == 0 || av == NULL)
 		return (NULL);
 
-	s = malloc(count);
 	printf("%d\n", count);
 	for (ac = 0; av[ac] != NULL; ac++)
 		printf("%s\n", av[ac]);
