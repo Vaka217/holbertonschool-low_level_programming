@@ -23,7 +23,7 @@ char *argstostr(int ac, char **av)
 			count++;
 	}
 
-	s = malloc(count);
+	s = malloc(count + 10);
 
 	if (s == NULL)
 		return (NULL);
