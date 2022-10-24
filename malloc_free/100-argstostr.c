@@ -19,7 +19,7 @@ char *argstostr(int ac, char **av)
 			count++;
 	}
 
-	s = malloc(count);
+	s = malloc(count + 1);
 
 	for (ac = 0; av[ac] != NULL; ac++)
 		printf("%s\n", av[ac]);
