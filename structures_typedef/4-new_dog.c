@@ -1,6 +1,8 @@
 #include "dog.h"
 #include <stddef.h>
 #include <stdlib.h>
+#include "1-strdup.c"
+
 /**
   *
   */
@@ -8,9 +10,11 @@
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *dogcp;
-	char *namecp, *ownercp;
+	char *namecp = NULL, *ownercp = NULL;
 
 	dogcp = malloc(sizeof(dog_t));
+	namecp = _strdup(name);
+	ownercp = _strdup(owner);
 
 	if (dogcp == NULL)
 		return (NULL);
@@ -18,7 +22,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	else
 	{
-		*namecp = *name;
 		dogcp->name = namecp;
 	}
 	if (age == 0)
@@ -35,7 +38,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 	}
 	else
 	{
-		*ownercp = *owner;
 		dogcp->owner = ownercp;
 	}
 	return (dogcp);
