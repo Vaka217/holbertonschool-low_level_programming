@@ -4,7 +4,12 @@
 #include "1-strdup.c"
 
 /**
+  * new_dog - creates a new dog.
+  * @name: Name of the dog.
+  * @age: Age of the dog.
+  * @owner: Owner of the dog.
   *
+  * Return: A pointer to a copy of dog_t, or NULL if it fails.
   */
 
 dog_t *new_dog(char *name, float age, char *owner)
