@@ -5,7 +5,7 @@
 
 /**
   * get_op_func - selecets the correct function to perform the operation.
-  * @char: Operation selected by the user.
+  * @s: Operation selected by the user.
   *
   * Return: Pointer to the function that corresponds to the operator given.
   */
