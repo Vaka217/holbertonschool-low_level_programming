@@ -14,12 +14,13 @@ void aux(size_t i, size_t j)
 void print_all(const char * const format, ...)
 {
 	va_list list;
-	size_t i = 0, j = strlen(format);
-
-	va_start(list, format);
+	size_t i = 0, j;
 
 	if (format)
 	{
+		va_start(list, format);
+		j = strlen(format);
+
 		while (format[i])
 		{
 			switch (format[i])
