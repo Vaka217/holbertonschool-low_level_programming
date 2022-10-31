@@ -3,18 +3,31 @@
 #include <stddef.h>
 #include <stdio.h>
 #include <string.h>
+
 /**
+  * aux - checks if comma goes between arguments.
+  * @i: Number of characters already count in format.
+  * @j: Length of format.
   *
   */
+
 void aux(size_t i, size_t j)
 {
 	if (i < j - 1)
 		printf(", ");
 }
+
+/**
+  * print_all - prints anything
+  * @format: List of types of arguments passed to the function.
+  *
+  */
+
 void print_all(const char * const format, ...)
 {
 	va_list list;
 	size_t i = 0, j;
+	char *str;
 
 	if (format)
 	{
@@ -41,7 +54,8 @@ void print_all(const char * const format, ...)
 					break;
 
 				case 's':
-					printf("%s", va_arg(list, char *) == NULL ? "(nil)" : va_arg(list, char *));
+					str = va_arg(list, char *);
+					printf("%s", str == NULL ? "(nil)" : str);
 					aux(i, j);
 					break;
 			}
