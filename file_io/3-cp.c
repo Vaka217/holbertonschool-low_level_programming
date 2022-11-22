@@ -1,54 +1,48 @@
 #include "main.h"
 
 /**
+  * main - copies the content of a file to another file.
+  * @ac: Number of arguments passed.
+  * @av: Pointer to an array of arguments passed.
   *
+  * Return: 0.
   */
 
 int main(int ac, char **av)
 {
-	int fd, wr, c;
+	int fd, fd2, wr, rd = 1024;
 	char *buf = malloc(1024);
 
 	if (ac != 3)
-	{
-		exit(97);
-		dprintf(2, "Usage: cp file_from file_to\n");
-	}
-	fd = open(av[1], O_RDONLY, 664);
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
+	fd = open(av[1], O_RDONLY);
 	if (fd == -1)
+		dprintf(STDOUT_FILENO, "Error: Can't read from file %s", av[1]), exit(98);
+	fd2 = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, 664);
+	if (fd2 == -1)
 	{
-		exit(98);
-		dprintf(2, "Error: Can't read from file %s\n", av[1]);
+		dprintf(STDOUT_FILENO, "Error: Can't write to %s", av[2]);
+		close(fd), exit(99);
 	}
-	read(fd, buf, 1024);
-	c = close(fd);
-	if (c == -1)
+	while (rd == 1024)
 	{
-		exit(100);
-		dprintf(2, "Error: Can't close fd %d\n", fd);
-	}
-	fd = open(av[2], O_CREAT | O_WRONLY | O_EXCL, 664);
-	if (errno == EEXIST)
-	{
-		c = close(fd);
-		if (c == -1)
+		rd = read(fd, buf, 1024);
+		if (rd == -1)
 		{
-			exit(100);
-			dprintf(2, "Error: Can't close fd %d\n", fd);
+			dprintf(STDOUT_FILENO, "Error: Can't read from file %s", av[1]);
+			exit(98);
 		}
-		fd = open(av[2], O_WRONLY | O_TRUNC);
+		wr = write(fd2, buf, rd);
+		if (wr == -1)
+		{
+			dprintf(STDOUT_FILENO, "Error: Can't write to %s", av[2]);
+			exit(99);
+		}
+
 	}
-	wr = write(fd, buf, 1024);
-	if (wr == -1)
-	{
-		exit(99);
-		dprintf(2, "Error: Can't read from file %s\n", av[2]);
-	}
-	c = close(fd);
-	if (c == -1)
-	{
-		exit(100);
-		dprintf(2, "Error: Can't close fd %d\n", fd);
-	}
+	if (close(fd) == -1)
+		dprintf(STDOUT_FILENO, "Error: Can't close fd %d", fd), exit(100);
+	if (close(fd2) == -1)
+		dprintf(STDOUT_FILENO, "Error: Can't close fd %d", fd), exit(100);
 	return (0);
 }
