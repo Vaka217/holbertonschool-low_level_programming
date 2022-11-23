@@ -16,11 +16,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned long int index;
 
 	if (!ht)
-	{
-		free(tmp);
-		free(new);
 		return (0);
-	}
 	index = key_index((const unsigned char *)key, ht->size);
 	new->key = malloc(strlen(key) + 1);
 	new->value = malloc(strlen(value) + 1);
@@ -34,7 +30,5 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 	else
 		ht->array[index] = new;
-	free(tmp);
-	free(new);
 	return (1);
 }
