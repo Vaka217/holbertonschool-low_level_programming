@@ -1,8 +1,8 @@
 #include "hash_tables.h"
 
 /**
-  * hash_table_print -  prints a hash table.
-  * @ht: The hash table to print.
+  * hash_table_delete -  deletes a hash table.
+  * @ht: The hash table to delete.
   *
   */
 
@@ -18,7 +18,7 @@ void hash_table_delete(hash_table_t *ht)
 			free(ht->array[index]->key);
 			free(ht->array[index]->value);
 			prev = ht->array[index];
-			ht->array[index]= ht->array[index]->next;
+			ht->array[index] = ht->array[index]->next;
 			free(prev);
 		}
 		index++;
