@@ -1,34 +1,65 @@
 #include "hash_tables.h"
-#include <string.h>
+
 /**
-  * hash_table_set - adds an element to the hash table.
-  * *@ht: Hash table.
-  * @key: The key.
-  * @value: Value of the key.
-  *
-  * Return: 1 if it succeeded, 0 otherwise.
-  */
+ * free_node - Free a node.
+ * @node: Node to free.
+ *
+ */
+
+void free_node(hash_node_t *node)
+{
+	free(node->key);
+	free(node->value);
+	free(node);
+}
+
+/**
+ * hash_table_set - adds an element to the hash table.
+ * @ht: The hash table you want to add or update the key/value to.
+ * @key: The key.
+ * @value: Value associated with the key.
+ *
+ * Return: 1 if it succeeded, 0 otherwise.
+ */
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *tmp = malloc(sizeof(hash_node_t));
-	hash_node_t *new = malloc(sizeof(hash_node_t));
 	unsigned long int index;
+	hash_node_t *new, *actual;
 
-	if (!ht)
+	if (strcmp(key, "") == 0 || key == NULL || ht == NULL)
 		return (0);
 	index = key_index((const unsigned char *)key, ht->size);
-	new->key = malloc(strlen(key) + 1);
-	new->value = malloc(strlen(value) + 1);
+	new = malloc(sizeof(hash_node_t));
+	if (new == NULL)
+		return (0);
 	new->key = strdup(key);
 	new->value = strdup(value);
-	if (ht->array[index] != NULL && strcmp(ht->array[index]->key, new->key) != 0)
-	{
-		tmp = ht->array[index];
+	new->next = NULL;
+	if (ht->array[index] == NULL)
 		ht->array[index] = new;
-		ht->array[index]->next = tmp;
-	}
 	else
-		ht->array[index] = new;
+	{
+		actual = ht->array[index];
+		if (strcmp(actual->key, key) == 0)
+		{
+			new->next = actual->next, ht->array[index] = new;
+			free_node(actual);
+			return (1);
+		}
+		while (actual->next != NULL && strcmp(actual->next->key, key) != 0)
+			actual = actual->next;
+		if (strcmp(actual->key, key) == 0)
+		{
+			new->next = actual->next->next;
+			free_node(actual->next);
+			actual->next = new;
+		}
+		else
+		{
+			new->next = ht->array[index];
+			ht->array[index] = new;
+		}
+	}
 	return (1);
 }
