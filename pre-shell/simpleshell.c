@@ -52,6 +52,8 @@ int main(void)
 				perror("./hsh");
 				return (-1);
 			}
+			free(dup);
+			free(argv);
 			return (0);
 		}
 		else

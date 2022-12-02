@@ -39,9 +39,10 @@ void *_realloc(void *ptr, size_t originalLength, size_t newLength)
 
 char *pathfinder(char *str)
 {
-	char *path = _getenv("PATH"), *dup2 = _strdup(path);
+	char *p = _getenv("PATH"), *dup2 = _strdup(p);
 	char *token = strtok(dup2, ":"), *dup = NULL;
 	struct stat st;
+
 	while (token)
 	{
 		dup = _strdup(token);
@@ -82,7 +83,10 @@ char *_getenv(const char *name)
 		dup = _strdup(environ[i]);
 		strtok(dup, "=");
 		if (strcmp(dup, name) == 0)
-			return(strtok(NULL, "="));
+		{
+			dup = strtok(NULL, "=");
+			return(dup);
+		}
 		free(dup);
 	}
 	return (NULL);
