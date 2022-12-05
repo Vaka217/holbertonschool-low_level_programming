@@ -11,7 +11,7 @@
 
 char *_strcat(char *dest, char *src);
 int _strlen(char *s);
-int _strcmp(char *s1, char *s2);
+int _strcmp(const char *s1, const char *s2);
 char *_strdup(char *str);
 void _printenv(void);
 char *pathfinder(char *str);
@@ -20,6 +20,7 @@ void _printenv(void);
 char *pathfinder(char *str);
 void *_realloc(void *ptr, size_t originalLength, size_t newLength);
 void _memcpy(void *dest, void *src, size_t n);
+int executioner(char **argv);
 extern char **environ;
 
 #endif

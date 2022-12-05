@@ -10,7 +10,7 @@
   * is lesser and 0 if both are equal.
   */
 
-int _strcmp(char *s1, char *s2)
+int _strcmp(const char *s1, const char *s2)
 {
 	while (*s1)
 	{
@@ -43,7 +43,7 @@ int _strlen(char *s)
 }
 
 /**
-  * _strncat - concatenates two strings.
+  * _strcat - concatenates two strings.
   * @dest: Destination string.
   * @src: String to add to end of dest.
   *
@@ -103,6 +103,15 @@ char *_strdup(char *str)
 		dup[i] = str[i];
 	return (dup);
 }
+
+/**
+  * _memcpy - copy memory area.
+  * @dest: Destination adress.
+  * @src: Source adress.
+  * @n: Bytes to copy.
+  *
+  * Description: copies n bytes from memory area src to memory area dest.
+  */
 
 void _memcpy(void *dest, void *src, size_t n)
 {
